@@ -111,7 +111,7 @@ downloads-done-clib2:
 	mkdir -p downloads
 	cd downloads && (git clone $(CLIB2_URL) clib2 || true) && cd clib2 && git checkout $(CLIB2_SHA1)
 ifeq (1,$(EXP_CLIB2))
-	touch EXP_CLIB2
+	touch downloads-done-EXP_CLIB2
 endif
 	touch $@
 
@@ -330,7 +330,7 @@ endif
 # Pretend few files to be uptodate
 	touch $(realpath $(COREUTILS_SRC_DIR))/configure $(realpath $(COREUTILS_SRC_DIR))/config.hin
 #	cd coreutils-native-build ; PATH="$(CROSS_PREFIX)/bin:$(PATH)" LIBS="-lunix" $(realpath $(COREUTILS_SRC_DIR))/configure --prefix=/gcc --host=ppc-amigaos
-ifeq (0, $(shell test -f EXP_CLIB2 ; echo $$?))
+ifeq (0, $(shell test -f downloads-done-EXP_CLIB2 ; echo $$?))
 # We do not need libunix / lnet for EXP CLIB2
 	cd coreutils-native-build ; PATH="$(CROSS_PREFIX)/bin:$(PATH)" CPPFLAGS="-mcrt=clib2" LDFLAGS="-mcrt=clib2" $(realpath $(COREUTILS_SRC_DIR))/configure --prefix=/gcc --host=ppc-amigaos --disable-maintainer-mode
 else
@@ -533,7 +533,7 @@ upload-release: native-dist
 
 .PHONY: clean-clib2
 clean-clib2:
-ifeq (0, $(shell test -f EXP_CLIB2 ; echo $$?))
+ifeq (0, $(shell test -f downloads-done-EXP_CLIB2 ; echo $$?))
 	test ! -d $(EXP_CLIB2_DIR) || $(MAKE) -C $(EXP_CLIB2_DIR) -f GNUmakefile.os4 clean
 else
 	test ! -d $(STABLE_CLIB2_DIR) || $(MAKE) -C $(STABLE_CLIB2_DIR) -f GNUmakefile.os4 clean
@@ -577,7 +577,4 @@ clean: clean-clib2 clean-gcc
 #
 .PNONY: clean-all
 clean-all: clean
-	rm -Rf downloads-done downloads-done-clib2 downloads
-ifeq (0, $(shell test -f EXP_CLIB2 ; echo $$?))
-	rm -f EXP_CLIB2
-endif
+	rm -Rf downloads-done* downloads
