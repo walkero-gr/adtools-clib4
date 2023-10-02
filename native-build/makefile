@@ -41,7 +41,7 @@ GMP_ARCHIVE=gmp-5.1.3.tar.bz2
 MPFR_ARCHIVE=mpfr-3.1.6.tar.bz2
 MPC_ARCHIVE=mpc-1.0.3.tar.gz
 
-BINUTILS_VERSION=2.23.2
+BINUTILS_VERSION=2.39.X
 BINUTILS_SRC_DIR=../binutils/repo
 
 GCC_SRC_DIR=../gcc/repo
