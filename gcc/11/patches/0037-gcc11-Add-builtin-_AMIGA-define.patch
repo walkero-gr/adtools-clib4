@@ -1,4 +1,4 @@
-From 80cd06ee17ebac85775c82d8b884de7ead35f169 Mon Sep 17 00:00:00 2001
+From 9959aff1f49d727ca28a4b50c4a4ca0c6a183868 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Ola=20S=C3=B6der?= <rolfkopman@gmail.com>
 Date: Sun, 9 Apr 2023 22:34:16 +0200
 Subject: [PATCH 37/39] gcc11: Add builtin _AMIGA define.

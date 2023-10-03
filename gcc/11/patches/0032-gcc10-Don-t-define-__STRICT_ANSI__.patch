@@ -1,4 +1,4 @@
-From 0c74121b54a3b0c55ede757302dd13f6728d560d Mon Sep 17 00:00:00 2001
+From b1a1fdda89692a5605626bf4414cbcbcfbb28dac Mon Sep 17 00:00:00 2001
 From: "ola.soder@axis.com" <ola.soder@axis.com>
 Date: Sun, 7 Feb 2021 19:38:47 +0100
 Subject: [PATCH 32/39] gcc10: Don't define __STRICT_ANSI__.

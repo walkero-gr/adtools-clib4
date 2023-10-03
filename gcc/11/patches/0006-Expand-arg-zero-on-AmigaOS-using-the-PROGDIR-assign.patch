@@ -1,4 +1,4 @@
-From a01c2a5ac436a00b931a0146cf802f69127c2884 Mon Sep 17 00:00:00 2001
+From d318e946386324491d70b5f0e237532aac758f69 Mon Sep 17 00:00:00 2001
 From: Sebastian Bauer <mail@sebastianbauer.info>
 Date: Sat, 5 Dec 2015 13:17:26 +0100
 Subject: [PATCH 06/39] Expand arg zero on AmigaOS using the PROGDIR: assign.

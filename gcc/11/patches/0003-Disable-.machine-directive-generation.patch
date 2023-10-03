@@ -1,4 +1,4 @@
-From 07718db105d776cff50b4cd8102132c88ea7c002 Mon Sep 17 00:00:00 2001
+From 6d171c23f179dc2cc4c4b453307cf1e68fdf9e3f Mon Sep 17 00:00:00 2001
 From: Sebastian Bauer <mail@sebastianbauer.info>
 Date: Thu, 9 Jul 2015 06:54:37 +0200
 Subject: [PATCH 03/39] Disable .machine directive generation.

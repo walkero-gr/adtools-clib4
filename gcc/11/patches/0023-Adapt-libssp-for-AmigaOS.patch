@@ -1,4 +1,4 @@
-From ab20508a3cdea818bb37195cea6d2e960b32e8d7 Mon Sep 17 00:00:00 2001
+From 890782e69ce0d00351ae430758285f4a4ae5a7bd Mon Sep 17 00:00:00 2001
 From: Sebastian Bauer <mail@sebastianbauer.info>
 Date: Tue, 22 May 2018 23:14:01 +0200
 Subject: [PATCH 23/39] Adapt libssp for AmigaOS.
