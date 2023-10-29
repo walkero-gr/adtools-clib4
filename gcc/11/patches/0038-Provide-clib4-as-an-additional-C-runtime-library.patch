@@ -81,7 +81,7 @@ index 8a549ed05ca4358e30e2bdef6a2b6d2d177fdd14..a8040a84d958d84815193959f07a4768
 +
 +#define LINK_CLIB4_SPEC "\
 +-L%(base_sdk)clib4/%(lib_subdir_clib4) \
-+-L%(base_gcc)lib/gcc/ppc-amigaos/%(version)/clib4/lib%(lib_subdir_clib4) \
++-L%(base_gcc)lib/gcc/ppc-amigaos/%(version)/clib4/%(lib_subdir_clib4) \
 +-L%(base_sdk)local/clib4/%(lib_subdir_clib4)"
 +
 +#define STARTFILE_CLIB4_SPEC "\
