@@ -29,6 +29,10 @@ CLIB4_SHA1?=HEAD
 SDK_VERSION?=54.16
 # Optional (DEFAULT=54.16):
 # Define SDK_VERSION to specify which version of the Amiga SDK is desired
+SDK_LOC?=
+# Optional (DEFAULT=):
+# Define the path that contains the local version of the SDK to avoid
+# needing to download it
 
 ROOT_DIR=$(realpath .)
 
@@ -142,7 +146,11 @@ ifneq ($(CLIB4_SUPPORT),)
 DOWNLOADS_DONE_DEPENDENCY+=downloads-done-clib4
 endif
 downloads-done: $(DOWNLOADS_DONE_DEPENDENCY)
+ifneq ($(SDK_LOC),)
+	cp $(SDK_LOC)/SDK_$(SDK_VERSION).lha downloads/
+else
 	wget "$(SDK_URL)" -O downloads/SDK_$(SDK_VERSION).lha
+endif
 	cd downloads && wget -N http://ftp.gnu.org/gnu/gmp/$(GMP_ARCHIVE)
 	cd downloads && wget -N http://ftp.gnu.org/gnu/mpfr/$(MPFR_ARCHIVE)
 	cd downloads && wget -N http://ftp.gnu.org/gnu/mpc/$(MPC_ARCHIVE)
