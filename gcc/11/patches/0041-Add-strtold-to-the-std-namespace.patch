@@ -19,14 +19,14 @@ index deae1df7fd4657b48ee9ccd4f0d1781f2d09237e..0cc1964bb91e900cdbc3c63dd3472918
  #undef strtoll
  #undef strtoull
  #undef strtof
- 
+
 -/* clib2 and newlib do not provide an implementation of strtold */
 -#if !defined (__amigaos4__) || defined(__CLIB4__)
-+/* AmigaOS4: clib2 does provide an implementation of strtold */
++/* AmigaOS4: clib2 does not provide an implementation of strtold */
 +#ifndef __CLIB2__
  #undef strtold
  #endif
- 
+
  namespace __gnu_cxx _GLIBCXX_VISIBILITY(default)
  {
  _GLIBCXX_BEGIN_NAMESPACE_VERSION
@@ -38,14 +38,14 @@ index deae1df7fd4657b48ee9ccd4f0d1781f2d09237e..0cc1964bb91e900cdbc3c63dd3472918
  #endif
    using ::strtof;
 -#ifndef __amigaos4__
-+/* AmigaOS4: clib2 does provide an implementation of strtold */
++/* AmigaOS4: clib2 does not provide an implementation of strtold */
 +#ifndef __CLIB2__
    using ::strtold;
  #endif
- 
+
  _GLIBCXX_END_NAMESPACE_VERSION
  } // namespace __gnu_cxx
- 
+
 @@ -252,13 +253,14 @@ namespace std
    using ::__gnu_cxx::lldiv;
  #endif
@@ -54,14 +54,13 @@ index deae1df7fd4657b48ee9ccd4f0d1781f2d09237e..0cc1964bb91e900cdbc3c63dd3472918
    using ::__gnu_cxx::strtoll;
    using ::__gnu_cxx::strtoull;
 -#ifndef __amigaos4__
-+/* AmigaOS4: clib2 does provide an implementation of strtold */
++/* AmigaOS4: clib2 does not provide an implementation of strtold */
 +#ifndef __CLIB2__
    using ::__gnu_cxx::strtold;
  #endif
  } // namespace std
- 
- #endif // _GLIBCXX_USE_C99_STDLIB
- 
--- 
-2.34.1
 
+ #endif // _GLIBCXX_USE_C99_STDLIB
+
+--
+2.34.1
