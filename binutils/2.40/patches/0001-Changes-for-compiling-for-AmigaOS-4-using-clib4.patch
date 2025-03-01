@@ -3439,7 +3439,7 @@ index d0f2d1c763523da801eb77736b7c141267ba25ad..ed5c1ae25593411e08224ee55883b7a9
    if (!path)
 +  #if defined(__amigaos4__) 
 +    path = "\"\"";
-+  #elif
++  #else
      path = ".";
 +  #endif
  
